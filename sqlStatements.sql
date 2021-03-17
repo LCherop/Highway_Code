@@ -14,6 +14,11 @@ ALTER TABLE committed_offenses ADD CONSTRAINT FK_driverscommitedoffenses FOREIGN
 ALTER TABLE committed_offenses ADD CONSTRAINT FK_ofiicerscommitedoffenses FOREIGN KEY (`officer_id`) REFERENCES officers(officer_id)
 ALTER TABLE committed_offenses ADD CONSTRAINT FK_offensescommittedoffenses FOREIGN KEY (`offense_no`) REFERENCES offences(offense_no)
 
+//Adding column for fine status(paid/pending)
+ALTER TABLE `committed_offenses` ADD `co_status` VARCHAR(20) NOT NULL AFTER `co_time`;
+UPDATE `committed_offenses` SET `co_status` = 'Paid' WHERE `committed_offenses`.`co_ID` = 1;
+UPDATE `committed_offenses` SET `co_status` = 'Pending' WHERE `committed_offenses`.`co_ID` = 2;
+
 //Populate the tables with data
 INSERT INTO `drivers` (`driver_ID`, `driver_Name`, `driver_gender`, `driver_licenceNo`) VALUES (NULL, 'Harriet Wanjiru', 'Female', 'ABC123'), (NULL, 'Consolas Mata', 'Male', 'ECD789');
 
