@@ -1,25 +1,25 @@
-//The database is called highway_code
+--The database is called highway_code
 CREATE DATABASE `highway_code`;
 
-//Has 4 tables, drivers,officers,offenses and committed offenses(committed offenses has info on which offense was committed,by who and noted by which officer and at what time
+--Has 4 tables, drivers,officers,offenses and committed offenses(committed offenses has info on which offense was committed,by who and noted by which officer and at what time
 
 CREATE TABLE `highway_code`.`drivers` ( `driver_ID` INT(10) NOT NULL AUTO_INCREMENT , `driver_Name` VARCHAR(20) NOT NULL , `driver_gender` VARCHAR(10) NOT NULL , `driver_licenceNo` VARCHAR(20) NOT NULL , PRIMARY KEY (`driver_ID`)) ENGINE = InnoDB;
 CREATE TABLE `highway_code`.`officers` ( `officer_ID` INT(10) NOT NULL AUTO_INCREMENT , `officer_Name` VARCHAR(20) NOT NULL , `officer_gender` VARCHAR(10) NOT NULL , `driver_serviceNo` VARCHAR(20) NOT NULL , PRIMARY KEY (`officer_ID`)) ENGINE = InnoDB;
 CREATE TABLE `highway_code`.`offences` ( `offense_No` INT(20) NOT NULL AUTO_INCREMENT , `offense_ID` VARCHAR(10) NOT NULL , `offense_description` VARCHAR(100) NOT NULL , `offense_fine` int(100) NOT NULL , PRIMARY KEY (`offense_No`)) ENGINE = InnoDB;
 CREATE TABLE `highway_code`.`committed_offenses`(`co_ID` int(10) NOT NULL AUTO_INCREMENT ,`driver_ID` INT(10) NOT NULL,`officer_ID` INT(10) NOT NULL,`offense_No` INT(20) NOT NULL,`co_time` timestamp  DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY (`co_ID`))ENGINE = InnoDB;
 
-//Foreign Key constraints for the committed offenses table
+--Foreign Key constraints for the committed offenses table
 
 ALTER TABLE committed_offenses ADD CONSTRAINT FK_driverscommitedoffenses FOREIGN KEY (`driver_id`) REFERENCES drivers(driver_id)
 ALTER TABLE committed_offenses ADD CONSTRAINT FK_ofiicerscommitedoffenses FOREIGN KEY (`officer_id`) REFERENCES officers(officer_id)
 ALTER TABLE committed_offenses ADD CONSTRAINT FK_offensescommittedoffenses FOREIGN KEY (`offense_no`) REFERENCES offences(offense_no)
 
-//Adding column for fine status(paid/pending)
+--Adding column for fine status(paid/pending)
 ALTER TABLE `committed_offenses` ADD `co_status` VARCHAR(20) NOT NULL AFTER `co_time`;
 UPDATE `committed_offenses` SET `co_status` = 'Paid' WHERE `committed_offenses`.`co_ID` = 1;
 UPDATE `committed_offenses` SET `co_status` = 'Pending' WHERE `committed_offenses`.`co_ID` = 2;
 
-//Populate the tables with data
+--Populate the tables with data
 INSERT INTO `drivers` (`driver_ID`, `driver_Name`, `driver_gender`, `driver_licenceNo`) VALUES (NULL, 'Harriet Wanjiru', 'Female', 'ABC123'), (NULL, 'Consolas Mata', 'Male', 'ECD789');
 
 INSERT INTO `officers` (`officer_ID`, `officer_Name`, `officer_gender`, `officer_serviceNo`) VALUES (NULL, 'Ibrahim Hassan', 'Male', '4243'), (NULL, 'Natasha Nanjala', 'Female', '6780');
