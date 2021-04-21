@@ -17,9 +17,9 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <x-label for="driver_officerId" :value="__('Driver License/ Officer ID')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="driver_officerId" class="block mt-1 w-full" type="text" name="driver_officerId" :value="old('dirver_officerId')" required autofocus />
             </div>
 
             <!-- Password -->

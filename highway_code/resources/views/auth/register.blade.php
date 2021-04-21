@@ -11,12 +11,25 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
+            <!--Driver/Officer ID -->
+            <div>
+                <x-label for="driver_officerId" :value="__('Driver License/ Officer No')" />
+
+                <x-input id="driver_officerId" class="block mt-1 w-full" type="text" name="driver_officerId" :value="old('driver_officerId')" required autofocus />
+            </div>
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="fullname" :value="__('FullName')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="fullname" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            </div>
+
+            <!-- Gender -->
+            <div>
+                <x-label for="gender" :value="__('Gender')" />
+
+                <x-input id="gender" class="block mt-1 w-full" type="text" name="gender" :value="old('gender')" required />
             </div>
 
             <!-- Email Address -->
@@ -24,6 +37,15 @@
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <!-- Role -->
+            <div class="mt-4">
+                <x-label for="userType" :value="__('Register as')" />
+                 <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"name="userType" :value="old('userType')" required >
+                        <option>Driver</option>
+                        <option>Police Officer</option>
+                </select>
             </div>
 
             <!-- Password -->
