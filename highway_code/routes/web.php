@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\recordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//all users
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+//drivers
+Route::get('/records',[recordController::class,'driver_records']);
+
+//officers
+
+//admin
+/*Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', function () {
+        return view('admindashboard');
+        
+    });
+//});*/
 require __DIR__.'/auth.php';
