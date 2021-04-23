@@ -35,4 +35,11 @@ Route::get('/records',[recordController::class,'driver_records']);
         
     });
 //});*/
+
+//All listed offenses 
+Route::get('/alloffenses',[alloffensesController::class,'alloffenses']);
+
+//Specific driver offenses
+Route::get('/allrecords',[committedController::class,'driver_offenses']);
+
 require __DIR__.'/auth.php';
