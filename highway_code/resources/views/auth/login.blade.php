@@ -1,9 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style=" background:  url('../images/login-bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Poppins', sans-serif;
+	height: 100vh;
+    margin: -20px 0 50px;
+    font-weight: 400;
+    position: relative;">
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+			<a href="/home" class="navbar-brand">HIGHWAY CODE</a>
+		</div>
+            
         </x-slot>
 
         <!-- Session Status -->
@@ -54,3 +76,5 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+</body>
+</html>
