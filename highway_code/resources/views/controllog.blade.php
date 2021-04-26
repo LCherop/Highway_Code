@@ -33,7 +33,7 @@
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">HIGHWAY CODE</a>
+			<a href="/adminhome" class="navbar-brand">HIGHWAY CODE</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
