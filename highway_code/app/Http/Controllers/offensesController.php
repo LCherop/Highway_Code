@@ -14,11 +14,11 @@ class offensesController extends Controller
 
     public function push(Request $request){
         $offence = new offences;
-        $offence->offenceId=request('offenceId');
+        $offence->offenseId=request('offenseId');
         $offence->description=request('description');
-        $offence->offenceFine=request('fine');
+        $offence->offenseFine=request('fine');
         $offence->save();
-        return redirect('alloffences')->with('success',"Offences added succesfully");
+        return redirect('controllog')->with('success',"Offences added succesfully");
     }
 
 }

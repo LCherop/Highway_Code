@@ -71,23 +71,19 @@
 			</div>
 
 			<div class="menu">
-            <table>
+            <table style="width: 100%;">
         <tr>
-            <th>#</th>
-            <th>Driver ID</th>
-            <th>Officer ID</th>
-            <th>Status</th>
-            <th>Timestamps</th>
-            <th>Timestamps</th>
+            <th style="padding:0 15px 0 15px;">#</th>
+            <th style="padding:0 15px 0 15px;">Driver ID</th>
+            <th style="padding:0 15px 0 15px;">Officer ID</th>
+            <th style="padding:0 15px 0 15px;">Status</th>
         </tr>
-        @foreach ($committed_offenses_final as $committed_offenses_final)
+        @foreach ($committedOffensesFinal as $committed_offenses_finalsy)
         <tr>
-            <td>{{$committed_offenses_final->co_ID}}</td>
-            <td>{{$committed_offenses_final->driverId}}</td>
-            <td>{{$committed_offenses_final->officerId}}</td>
-            <td>{{$committed_offenses_final->status}}</td>
-            <td>{{$committed_offenses_final->created_at}}</td>
-            <td>{{$committed_offenses_final->updated_at}}</td>
+            <td style="padding:0 15px 0 15px;">{{$committed_offenses_finalsy->co_ID}}</td>
+            <td style="padding:0 15px 0 15px;">{{$committed_offenses_finalsy->driverId}}</td>
+            <td style="padding:0 15px 0 15px;">{{$committed_offenses_finalsy->officerId}}</td>
+            <td style="padding:0 15px 0 15px;">{{$committed_offenses_finalsy->status}}</td>
         </tr>
         @endforeach
            
