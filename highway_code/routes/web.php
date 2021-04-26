@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\recordController;
+use App\Http\Controllers\alloffensesController;
+use App\Http\Controllers\committedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,7 @@ use App\Http\Controllers\recordController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 //all users
@@ -34,7 +36,7 @@ Route::get('/records',[recordController::class,'driver_records']);
         return view('admindashboard');
         
     });
-//});*/
+});*/
 
 //All listed offenses 
 Route::get('/alloffenses',[alloffensesController::class,'alloffenses']);
