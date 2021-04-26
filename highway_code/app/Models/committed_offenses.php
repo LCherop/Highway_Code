@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class committed_offenses extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'driverId',
+        'officerId',
+        'offenceNo',
+        'status',
+    ];
 }
