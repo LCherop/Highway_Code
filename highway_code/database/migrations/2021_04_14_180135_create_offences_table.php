@@ -15,7 +15,7 @@ class CreateOffencesTable extends Migration
     {
         Schema::create('offences', function (Blueprint $table) {
             $table->id('offenseNo');
-            $table->string('offenseId');
+            $table->string('offenseId')->unique();
             $table->string('description');
             $table->integer('offenseFine');
             $table->timestamps();

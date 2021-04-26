@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePersonalRecordsView extends Migration
+class CreatePersonalRecordsFinalFTable extends Migration
 {
-    /**
+      /**
      * Run the migrations.
      *
      * @return void
@@ -32,11 +32,11 @@ class CreatePersonalRecordsView extends Migration
             CREATE ALGORITHM = UNDEFINED VIEW `personalRecords` AS SELECT 
                 offences.description,
                 offences.offenseFine,
-                committed_offenses.driverId,
-                committed_offenses.status 
+                committed_offenses_final.driverId,
+                committed_offenses_final.status 
             FROM offences 
-            INNER JOIN committed_offenses 
-            WHERE offences.offenseNo=committed_offenses.offenceNo
+            INNER JOIN committed_offenses_final 
+            WHERE offences.offenseId=committed_offenses_final.offenseId
 
             SQL;
     }
