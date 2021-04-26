@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\homeController;
+use App\Http\Controllers\offensesController;
+use App\Http\Controllers\PersonalRecordsController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\recordController;
+use App\Http\Controllers\adminhomeController;
 use App\Http\Controllers\alloffensesController;
 use App\Http\Controllers\committedController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,15 +22,40 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/home',[homeController::class,'show']);
+
+
 //all users
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-//drivers
-Route::get('/records',[recordController::class,'driver_records']);
+//Drivers
+//Personal records
+Route::get('/precords',[PersonalRecordsController::class,'personalR']);
 
-//officers
+//All listed offenses (info)
+Route::get('/alloffenses',[alloffensesController::class,'alloffenses']);
+
+//all users
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+
+//Admin pages
+//Home
+Route::get('/adminhome',[adminhomeController::class,'home']);
+
+//Dashboard or Profile Page
+Route::get('/admindashboard',[adminhomeController::class,'dash']);
+
+//Specific driver offenses (committed offenses)
+Route::get('/allrecords',[committedController::class,'driver_offenses']);
+
+//Control Log (adding an offence)
+Route::get('/controllog',[offensesController::class,'index']);
+Route::post('/controllog/push',[offensesController::class,'push']);
 
 //admin
 /*Route::middleware(['auth', 'admin'])->group(function () {
@@ -36,12 +63,7 @@ Route::get('/records',[recordController::class,'driver_records']);
         return view('admindashboard');
         
     });
-});*/
+//});*/
 
-//All listed offenses 
-Route::get('/alloffenses',[alloffensesController::class,'alloffenses']);
-
-//Specific driver offenses
-Route::get('/allrecords',[committedController::class,'driver_offenses']);
 
 require __DIR__.'/auth.php';
