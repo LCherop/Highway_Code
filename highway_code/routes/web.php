@@ -43,9 +43,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-//Admin pages
-//Home
-Route::get('/adminhome',[adminhomeController::class,'home']);
+
+
+
 
 //Dashboard or Profile Page
 Route::get('/admindashboard',[adminhomeController::class,'dash']);
@@ -53,17 +53,23 @@ Route::get('/admindashboard',[adminhomeController::class,'dash']);
 //Specific driver offenses (committed offenses)
 Route::get('/allrecords',[committedController::class,'driver_offenses']);
 
-//Control Log (adding an offence)
-Route::get('/controllog',[offensesController::class,'index']);
-Route::post('/controllog/push',[offensesController::class,'push']);
+
+
 
 //admin
-/*Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
+    //Home
+    Route::get('/adminhome',[adminhomeController::class,'home']);
+    //Profile
+    Route::get('/admindashboard',[adminhomeController::class,'dash']);
+
     Route::get('/admin', function () {
-        return view('admindashboard');
-        
+        return view('admindashboard'); 
     });
-//});*/
+    //Control Log (adding an offence)
+    Route::get('/controllog',[offensesController::class,'index']);
+    Route::post('/controllog/push',[offensesController::class,'push']);
+});
 
 
 require __DIR__.'/auth.php';

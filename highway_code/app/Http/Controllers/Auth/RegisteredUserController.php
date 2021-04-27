@@ -52,7 +52,12 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-
+    if($user->userType='Police Officer'){
+        return redirect(RouteServiceProvider::ADMIN);
+    }
+    
         return redirect(RouteServiceProvider::HOME);
+    
+    
     }
 }

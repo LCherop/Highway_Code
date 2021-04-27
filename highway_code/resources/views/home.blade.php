@@ -33,19 +33,6 @@
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-<<<<<<< HEAD
-			<a href="#" class="navbar-brand">HIGHWAY CODE</a>
-		</div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/home" class="smoothScroll">HOME</a></li>
-				<li><a href="/precords" class="smoothScroll">RECORDS</a></li>
-				<li><a href="/dashboard" class="smoothScroll">PROFILE</a></li>
-				<li><a href="/alloffenses" class="smoothScroll">INFO</a></li>
-				<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                             class="smoothScroll">LOG OUT</a></li>
-                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
-=======
 			<a href="/" class="navbar-brand">HIGHWAY CODE</a>
 		</div>
 		<div class="collapse navbar-collapse">
@@ -63,7 +50,7 @@
                     @endauth
                 </div>
             @endif
->>>>>>> 2695312c74c4a63544f4c06c88030df97f07fc12
+
 			</ul>
 		</div>
 	</div>
@@ -75,11 +62,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<h1>HIGHWAY CODE</h1>
-<<<<<<< HEAD
 				<a href="/precords" class="smoothScroll btn btn-default">SEE MY RECORDS</a>
-=======
-				<a href="" class="smoothScroll btn btn-default">SEE MY RECORDS</a>
->>>>>>> 2695312c74c4a63544f4c06c88030df97f07fc12
 			</div>
 		</div>
 	</div>		
@@ -121,14 +104,9 @@
 				<h1 class="heading">FACT OF THE DAY</h1>
 				<hr>
 
-<<<<<<< HEAD
-				<p>La Pâtisserie is a Kenyan owned bakery that seeks to bring French flavour to the local scene. We are one of only a handful few enduring Craft Bakeries in Nairobi. We have assembled our notoriety on consolidating great quality conventional heating with great incentive for cash. We offer our clients a full scope of breads, forte breads, morning merchandise, cakes and baked goods. Our pastry specialists work with the goal that the portion you purchase is crisp out of the stove. We keep on satisfying the requirements and wants of our clients with a menu of fixing enlivened, arranged to-arrange nourishment.</p>
-			</div>
-=======
 				<p></p>	
             </div>
 
->>>>>>> 2695312c74c4a63544f4c06c88030df97f07fc12
 		</div>
 	</div>
 </section>		

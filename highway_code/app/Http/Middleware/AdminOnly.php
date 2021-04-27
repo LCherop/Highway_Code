@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Auth;
 
 class AdminOnly 
 {
@@ -15,12 +16,17 @@ class AdminOnly
      * @param  \String  $authAdmin
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, String $authAdmin)
+    public function handle(Request $request, Closure $next)
     {
-        if(! $authAdmin='Admin' &&auth()->user()->userType($authAdmin) ){
-            abort(code403);
+        if(Auth::user()){
+            if(Auth::user()->userType='Police Officer'){
+                return $next($request);
+            }
+            return redirect('dashboard');
         }
-        return $next($request);
+        return redirect('/');
+    
+        
     }
     
 }
