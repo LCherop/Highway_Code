@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<body>
 <x-app-layout>
 <head>
 
@@ -20,7 +21,20 @@
 	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500' rel='stylesheet' type='text/css'>
 </head>
 
-    <x-slot name="header">
+
+
+    
+    <section class="navbar navbar-default navbar-fixed-top" role="navigation">
+	
+    <div class="container">
+        <div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a href="/adminhome" class="navbar-brand">HIGHWAY CODE</a>
+		</div>
         
         <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -33,17 +47,11 @@
                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                         </ul>
         </div>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-            </div>
-        </div>
     </div>
+    </section>
+    
+
+    
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -89,4 +97,5 @@
 <script src="js/index.js"></script>
 
 </x-app-layout>
+</body>
 </html>

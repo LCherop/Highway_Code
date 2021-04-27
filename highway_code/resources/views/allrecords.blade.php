@@ -34,7 +34,7 @@
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">HIGHWAY CODE</a>
+			<a href="/adminhome" class="navbar-brand">HIGHWAY CODE</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -71,23 +71,19 @@
 			</div>
 
 			<div class="menu">
-            <table>
+            <table style="width: 100%;">
         <tr>
-            <th>#</th>
-            <th>Driver ID</th>
-            <th>Officer ID</th>
-            <th>Status</th>
-            <th>Timestamps</th>
-            <th>Timestamps</th>
+            <th style="padding:0 15px 0 15px;">#</th>
+            <th style="padding:0 15px 0 15px;">Driver ID</th>
+            <th style="padding:0 15px 0 15px;">Officer ID</th>
+            <th style="padding:0 15px 0 15px;">Status</th>
         </tr>
-        @foreach ($committedOffences as $committed_offense)
+        @foreach ($committedOffensesFinal as $committed_offenses_finalsy)
         <tr>
-            <td>{{$committed_offense->co_ID}}</td>
-            <td>{{$committed_offense->driverId}}</td>
-            <td>{{$committed_offense->officerId}}</td>
-            <td>{{$committed_offense->status}}</td>
-            <td>{{$committed_offense->created_at}}</td>
-            <td>{{$committed_offense->updated_at}}</td>
+            <td style="padding:0 15px 0 15px;">{{$committed_offenses_finalsy->co_ID}}</td>
+            <td style="padding:0 15px 0 15px;">{{$committed_offenses_finalsy->driverId}}</td>
+            <td style="padding:0 15px 0 15px;">{{$committed_offenses_finalsy->officerId}}</td>
+            <td style="padding:0 15px 0 15px;">{{$committed_offenses_finalsy->status}}</td>
         </tr>
         @endforeach
            

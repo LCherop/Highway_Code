@@ -35,7 +35,7 @@
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">HIGHWAY CODE</a>
+			<a href="/home" class="navbar-brand">HIGHWAY CODE</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -73,19 +73,19 @@
 			</div>
 
 			<div class="menu">
-            <table>
+            <table style="width:100%">
         <tr>
             <th style="padding:0 15px 0 15px;">Description</th>
             <th style="padding:0 15px 0 15px;">Fine</th>
             <th style="padding:0 15px 0 15px;">Licence Number</th>
             <th style="padding:0 15px 0 15px;">Status</th>
         </tr>
-        @foreach ($personalRecords as $personalRecords)
+        @foreach ($personalRecordsfinal as $personalRecordsfinal)
         <tr>
-            <td style="padding:0 15px 0 15px;">{{$personalRecords->description}}</td>
-            <td style="padding:0 15px 0 15px;">{{$personalRecords->offenseFine}}</td>
-            <td style="padding:0 15px 0 15px;">{{$personalRecords->driverId}}</td>
-            <td style="padding:0 15px 0 15px;">{{$personalRecords->status }}</td>
+            <td style="padding:0 15px 0 15px;">{{$personalRecordsfinal->description}}</td>
+            <td style="padding:0 15px 0 15px;">{{$personalRecordsfinal->offenseFine}}</td>
+            <td style="padding:0 15px 0 15px;">{{$personalRecordsfinal->driverId}}</td>
+            <td style="padding:0 15px 0 15px;">{{$personalRecordsfinal->status }}</td>
         </tr>
         @endforeach
     </table>

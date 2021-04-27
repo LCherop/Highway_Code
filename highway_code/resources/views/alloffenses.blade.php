@@ -34,7 +34,7 @@
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">HIGHWAY CODE</a>
+			<a href="/home" class="navbar-brand">HIGHWAY CODE</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -72,23 +72,19 @@
 			</div>
 
 			<div class="menu">
-                <table>
+                <table style="width:100%">
                     <tr>
-                        <th>Offense Number</th>
-                        <th>Offense ID</th>
-                        <th>Description</th>
-                        <th>Fine</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
+                        <th style="padding:0 15px 0 15px;">Offense Number</th>
+                        <th style="padding:0 15px 0 15px;">Offense ID</th>
+                        <th style="padding:0 15px 0 15px;">Description</th>
+                        <th style="padding:0 15px 0 15px;">Fine</th>
                     </tr>
             @foreach ($offences as $offence)
                     <tr>
-                        <td>{{$offence->offenseNo}}</td>
-                        <td>{{$offence->offenseId}}</td>
-                        <td>{{$offence->description}}</td>
-                        <td>{{$offence->offenseFine}}</td>
-                        <td>{{$offence->created_at}}</td>
-                        <td>{{$offence->updated_at}}</td>
+                        <td style="padding:0 15px 0 15px;">{{$offence->offenseNo}}</td>
+                        <td style="padding:0 15px 0 15px;">{{$offence->offenseId}}</td>
+                        <td style="padding:0 15px 0 15px;">{{$offence->description}}</td>
+                        <td style="padding:0 15px 0 15px;">{{$offence->offenseFine}}</td>
                     </tr>
             @endforeach
                 </table>

@@ -9,5 +9,5 @@ class personalRecordsfinal extends Model
 {
     use HasFactory;
 
-    public $table = "personalRecords";
+    public $table = "personalRecordsalas";
 }
